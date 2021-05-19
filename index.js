@@ -11,7 +11,7 @@ function* execute(tasks) {
 
 exports.parallelize = (tasks, mode = "STREAMING", concurrency = 1, delay = 0, callback = null) => {
   const generator = execute(tasks);
-  var result = { started: 0, ended: 0 };
+  var result = { started: 0, ended: 0, resolved: 0, rejected: 0 };
   var semaphore = 0;
   var resolved = false;
 
@@ -34,7 +34,11 @@ exports.parallelize = (tasks, mode = "STREAMING", concurrency = 1, delay = 0, ca
         result.started++;
         semaphore++;
 
-        next.value.task.finally(() => {
+        next.value.task.then(()=>{
+          result.resolved++;          
+        }).catch(() => {
+          result.rejected++;          
+        }).finally(() => {
           semaphore--;
           result.ended++;
 

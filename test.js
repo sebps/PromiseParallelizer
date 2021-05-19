@@ -36,7 +36,7 @@ describe('Parallelize', function() {
 
     it('2 batches of 3 tasks ( of 1,2 and 3 seconds ) with concurrency of 3 : results should be accurates', async function() {  
       const result = await index.parallelize(tasks, "BATCH", 3);
-      expect(result).to.deep.equal({ started:6, ended:6 });
+      expect(result).to.deep.equal({ started:6, ended:6, resolved:6, rejected: 0 });
     });
 
     it('2 batches of 3 tasks ( of 1,2 and 3 seconds ) with concurrency of 3 and 2 seconds delay elapsed time should be of 8 seconds', async function() {  
@@ -76,7 +76,7 @@ describe('Parallelize', function() {
 
     it('6 tasks ( of 1, 2, 3, 1, 2 and 3 seconds ) with concurrency of 3  : results should be accurates', async function() {  
       const result = await index.parallelize(tasks, "STREAMING", 3);
-      expect(result).to.deep.equal({ started:6, ended:6 });
+      expect(result).to.deep.equal({ started:6, ended:6, resolved: 6, rejected: 0 });
     });
 
     it('6 tasks ( of 1, 2, 3, 1, 2 and 3 seconds ) with concurrency of 3 and 2 seconds delay : elapsed time should be of 6 seconds', async function() {

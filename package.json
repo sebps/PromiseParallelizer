@@ -1,6 +1,6 @@
 {
   "name": "promise-parallelizer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A lightweight library to parallelize promises.",
   "main": "index.js",
   "scripts": {
