@@ -1,6 +1,6 @@
 {
   "name": "promise-parallelizer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A lightweight library to parallelize promises.",
   "main": "index.js",
   "scripts": {
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sebps/PromiseParallelizer.git"
+    "url": "https://github.com/sebps/promise-parallelizer.git"
   },
   "author": "sebps",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sebps/PromiseParallelizer/issues"
+    "url": "https://github.com/sebps/promise-parallelizer/issues"
   },
-  "homepage": "https://github.com/sebps/PromiseParallelizer#readme",
+  "homepage": "https://github.com/sebps/promise-parallelizer#readme",
   "devDependencies": {
     "chai": "^4.3.4",
     "mocha": "^8.4.0"
